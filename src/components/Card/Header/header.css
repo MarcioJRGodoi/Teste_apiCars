@@ -1,0 +1,35 @@
+.card-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.card-header .username {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--white);
+}
+
+.card-header .username.dark {
+  color: var(--white);
+}
+
+.card-header .username.light {
+  color: var(--blueDark);
+}
+
+.card-header .username h2 {
+  color: inherit;
+  font-size: 1.6em;
+  letter-spacing: 1px;
+}
+
+.card-header .username h3 {
+  color: var(--blue);
+  font-size: 0.9em;
+}
+
+.card-header span {
+  color: var(--gray);
+  font-weight: 600;
+}
