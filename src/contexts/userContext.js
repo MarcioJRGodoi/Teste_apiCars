@@ -4,12 +4,12 @@ import api from '../services/api';
 const UserContext = createContext({});
 
 export function UserProvider({ children }) {
-  const [Modelo, setBio] = useState('');
+  const [Modelo, setModel] = useState('');
   const [AnoModelo, setCreatedAt] = useState('');
-  const [Valor, setFollowers] = useState('');
-  const [CodigoFipe, setFollowing] = useState('');
-  const [MesReferencia, setRepos] = useState('');
-  const [Marca, setUsername] = useState('');
+  const [Valor, setValor] = useState('');
+  const [CodigoFipe, setFipe] = useState('');
+  const [MesReferencia, setRefer] = useState('');
+  const [Marca, setMarca] = useState('');
 
   const [statusMessage, setStatusMessage] = useState('Pesquise por um carro!');
 
@@ -19,12 +19,12 @@ export function UserProvider({ children }) {
     api.get(`/${num_marca}/modelos/${num_modelo}/anos/${ano_mes}`)
     .then(res => {
       const { data } = res;
-      setBio(data.Modelo);
+      setModel(data.Modelo);
       setCreatedAt(data.AnoModelo);
-      setFollowers(data.Valor);
-      setFollowing(data.CodigoFipe);
-      setRepos(data.MesReferencia);
-      setUsername(data.Marca);
+      setValor(data.Valor);
+      setFipe(data.CodigoFipe);
+      setRefer(data.MesReferencia);
+      setMarca(data.Marca);
       setStatusMessage('');
     })
     .catch(err => {
