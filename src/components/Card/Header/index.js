@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from '../../../contexts/themeContext';
-import months from './months';
 import './header.css';
 import { useUser } from '../../../contexts/userContext';
 

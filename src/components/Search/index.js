@@ -10,12 +10,14 @@ export function Search() {
   const { searchUser } = useUser();
   const [carname, setCarname] = useState('');
   const [carnumber, setCarnumber] = useState('');
+  const [carano, setCarAno] = useState('');
 
   function handleSearchUser(e) {
     e.preventDefault();
-    searchUser(carname,carnumber);
+    searchUser(carname,carnumber,carano);
     setCarname('');
     setCarnumber('');
+    setCarAno('');
   }
 
   return(
@@ -32,6 +34,12 @@ export function Search() {
         placeholder="Search Car numb..."
         value={carnumber}
         onChange={e => setCarnumber(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Search Car Age..."
+        value={carano}
+        onChange={e => setCarAno(e.target.value)}
       />
       <button type="submit">Search</button>
     </form>

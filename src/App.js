@@ -1,25 +1,28 @@
-import './index.css'
-import { Search } from './components/Search';
 import { Card } from './components/Card';
+import { Search } from './components/Search';
 import { useTheme } from './contexts/themeContext';
 import { useUser } from './contexts/userContext';
 
-function App() {
+import './index.css';
 
+function App() {
   const { theme } = useTheme();
   const { statusMessage } = useUser();
-  
+
   return (
-  <div className='container dark'>
-    <main className='content'>
-    <Search/>
-    
+    <div className={`container ${theme}`}>
+      <main className="content">
+        <Search />
+
+        {
+          statusMessage.length > 0 ? (
+            <h2 className="status-message">{statusMessage}</h2>
+          ) : (
             <Card />
-          
-        
-    </main>
-    
-  </div>
+          )
+        }
+      </main>
+    </div>
   );
 }
 

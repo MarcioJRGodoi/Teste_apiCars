@@ -7,17 +7,13 @@ import './card.css';
 
 export function Card() {
   const { theme } = useTheme();
-  const { bio, avatar } = useUser();
+  const { Modelo, Marca } = useUser();
 
   return(
     <div className={`card-container ${theme}`}>
 
       <main className="card-body">
         <CardHeader />
-
-        <p className="bio">
-          { bio ? bio : 'Descricao' }
-        </p>
 
         <Counters />
       </main>
